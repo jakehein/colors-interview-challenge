@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Color } from '../../public/common';
+import { IColor } from '../../public/common';
 
-function ColorSwatchList(props: {colors: Color[]}) {
+function ColorSwatchList(props: {colors: IColor[]}) {
   const [colors, setColors] = useState(props.colors);
   
   // useEffect(() => {

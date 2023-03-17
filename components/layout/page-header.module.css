@@ -1,0 +1,29 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 10% 1em 5em;
+  height: 5rem;
+  background-color: #202020;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: black;
+  font-family: 'Fira', sans-serif;
+  height: 100%;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search {
+  font-size: large;
+  border-radius: 0.5em;
+  padding-left: 1em;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

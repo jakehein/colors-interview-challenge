@@ -1,9 +1,15 @@
 import { Fragment } from 'react';
 import ColorSwatchList from '../components/ColorSwatchList';
 import { getAllColors, getGroupedColors } from '../helpers/api-util';
-import { Color, GroupedColors } from '../public/common';
+import { IColor, GroupedColors } from '../public/common';
+import { useAppContext } from '../context/state';
 
-function HomePage(props: { colors: Color[]; groupedColors: GroupedColors[] }) {
+function HomePage(props: { colors: IColor[]; groupedColors: GroupedColors[] }) {
+  const { cacheColors } = useAppContext();
+
+  //cache our colors for use in the menu and header components
+  cacheColors(props.colors);
+
   return <Fragment>
     <span>Welcome to Next.js!</span>
     {/* <ColorSwatchList colors={props.colors}></ColorSwatchList> */}

@@ -1,10 +1,13 @@
-export type Color = {
-  id: number,
-  name: string,
-  hex: string,
+export interface IColorBase {
+  name: string;
+  hex: string;
+}
+
+export interface IColor extends IColorBase {
+  id: string;
 }
 
 export type GroupedColors = {
-  colors: Color[];
+  colors: IColor[];
   page: number;
 }
