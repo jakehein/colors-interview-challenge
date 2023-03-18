@@ -22,17 +22,24 @@ function PageHeader(props) {
         color = await getColorByName(searchText);
       }
       if (!color) {
-        alert("That's not a color we have here! Sorry, try again");
+        alert("That's not one of the 100 colors we have stored.\n\n" +
+          "Try entering a color's id (0-99), the name of a stored color (i.e. Beige), " +
+          "or a stored hexcode (i.e. #F5F5DC)!");
         return;
       }
       Router.push(`/details/${color.id}`);
     }
   }
 
+  function onClickHelpfulHumanHandler() {
+    if (Router.pathname !== '/') {
+      Router.push('/');
+    }
+  }
 
   return (
     <header className={classes.header}>
-      <div>
+      <div className={classes.imageContainer} onClick={onClickHelpfulHumanHandler}>
         <Image 
           className={classes.logo} 
           src={Hsvg} 

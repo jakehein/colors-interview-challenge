@@ -1,0 +1,8 @@
+.colorPresets > a {
+  text-decoration: none;
+  color:inherit;
+}
+
+.colorPresets {
+  padding-top: 1em;
+}

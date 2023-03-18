@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import PageHeader from "./page-header";
-import Menu from "./menu";
+import Menu from "./menu/menu";
 import classes from './layout.module.css';
 
 function Layout(props) {

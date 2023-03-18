@@ -2,9 +2,13 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 1em 1.5em 1em 1.5em;
+  padding: 1em 1.5em 1em 2.5em;
   height: 7%;
   background-color: #363C3C;
+}
+
+.imageContainer {
+  cursor: pointer;
 }
 
 .logo {

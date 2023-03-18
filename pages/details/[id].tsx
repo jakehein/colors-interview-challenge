@@ -3,8 +3,20 @@ import ColorSwatch from "../../components/ColorSwatch";
 import { getAllColors, getColorById, getShadesOfColor } from "../../helpers/api-util";
 import { IColor, IColorBase } from "../../public/common";
 import classes from './color-detail-page.module.css'
+import { useEffect, useState } from "react";
 
 function ColorDetailPage(props: { color: IColor, shades: IColorBase[] }) {
+  const color = props.color;
+  const [currentColorDetails, setCurrentColorDetails] = useState(color as IColorBase)
+
+  useEffect(() => {
+    setCurrentColorDetails(color)
+  }, [color])
+
+  function currentDetailsHandler(color: IColorBase) {
+    setCurrentColorDetails(color)
+  }
+
   function clearHandler() {
     Router.push('/');
   }
@@ -12,13 +24,11 @@ function ColorDetailPage(props: { color: IColor, shades: IColorBase[] }) {
   return (
     <div>
       <div className={classes.swatchContainer}>
-        <ColorSwatch isTile={false} color={props.color} />
+        <ColorSwatch isTile={false} currentDetailsHandler={()=>{}} color={currentColorDetails} />
       </div>
 
-      {/** need to add 5 shades here */}
-
       <div className={classes.swatchShadeContainer}>
-        {props.shades.map((shade) => <ColorSwatch isTile={true} color={shade} />)}
+        {props.shades.map((shade) => <ColorSwatch isTile={true} key={shade.hex} currentDetailsHandler={currentDetailsHandler} color={shade} />)}
       </div>
 
       <div className={classes.clearContainer}>
@@ -26,10 +36,6 @@ function ColorDetailPage(props: { color: IColor, shades: IColorBase[] }) {
           <button onClick={clearHandler}>Clear</button>
         </div>
       </div>
-      
-      
-      {/* <span> Color </span>
-      <span>{props.color.hex}</span> */}
     </div>
   );
 }

@@ -1,25 +1,40 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import ColorSwatchList from '../components/ColorSwatchList';
 import { getAllColors, getGroupedColors } from '../helpers/api-util';
 import { IColor, GroupedColors } from '../public/common';
 import { useAppContext } from '../context/state';
+import ColorSwatchPage from '../components/ColorSwatchList/color-swatch-page';
 
 function HomePage(props: { colors: IColor[]; groupedColors: GroupedColors[] }) {
+  const colors = props.colors;
+  const groupedColors = props.groupedColors;
+  const [ active, setActive ] = useState(groupedColors[0].page);
   const { cacheColors } = useAppContext();
 
+  function pageGroupHandler(page: number) {
+    setActive(page);
+  }
+  
   //cache our colors for use in the menu and header components
-  cacheColors(props.colors);
+  cacheColors(colors);
 
   return <Fragment>
-    <span>Welcome to Next.js!</span>
-    {/* <ColorSwatchList colors={props.colors}></ColorSwatchList> */}
     <ul>
       {
-        props.groupedColors ? props.groupedColors.map((color) => 
-        <li key={color.page}>
-          <h1>{color.page}</h1>
-          <ColorSwatchList colors={color.colors}></ColorSwatchList>
-        </li>) : <p>Loading...</p>
+        //List of tiles
+        groupedColors.map((colorGroup) => 
+        <li key={colorGroup.page}>
+          <ColorSwatchList groupedColors={colorGroup} activePage={active} />
+        </li>)
+      }
+    </ul>
+    <ul>
+      {
+        //List of pages
+        groupedColors.map((colorGroup) => 
+        <li key={colorGroup.page}>
+          <ColorSwatchPage page={colorGroup.page} pageUpdateHandler={pageGroupHandler} />
+        </li>)
       }
     </ul>
     </Fragment>

@@ -9,19 +9,9 @@
 
 .randomColorContainer {
   display: flex;
-  /* flex: 1; */
 }
 
 .randomColor {
   flex: 1;
   cursor: pointer;
-}
-
-.colorPresets > li > a {
-  text-decoration: none;
-  color:inherit;
-}
-
-.colorPresets > li {
-  padding-top: 1em;
 }
