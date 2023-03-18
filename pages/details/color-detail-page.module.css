@@ -1,0 +1,22 @@
+.swatchContainer {
+  padding: 2em 1.5em 1em 2.5em;
+  width: 100%;
+  display: flex;
+}
+
+.swatchShadeContainer {
+  padding: 2em 1.5em 1em 2.5em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.clearContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.clear {
+  display: flex;
+  width: 15em;
+}

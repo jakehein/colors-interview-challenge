@@ -1,20 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
-/* @import url('https://fonts.google.com/specimen/Source+Serif+Pro'); */
+@import url('https://fonts.google.com/specimen/Source+Serif+Pro');
 
 * {
   box-sizing: border-box;
 }
 
-body {
+html, body {
   margin: 0;
+  padding: 0;
   font-family: 'Source Serif Pro', serif;
   font-weight: 300;
   color: #000000;
   background-color: #e4f1f1;
+  height: 100%;
 } 
 
 main {
-  width: 85vw;
+  width: 85%;
+  min-height: 100%;
 }
 
 h1,
@@ -40,5 +42,9 @@ button {
   border-radius: 0.25em;
   border-width: thin;
   font-size: large;
+  font-family: 'Source Serif Pro', serif;
+}
+
+input {
   font-family: 'Source Serif Pro', serif;
 }

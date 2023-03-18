@@ -76,7 +76,6 @@ export async function getColorByHexCode(hex: string): Promise<IColor> {
 
 export async function getColorById(id: string): Promise<IColor> {
   const allColors = await getAllColors();
-  console.log(allColors)
 
   const color = allColors.find((color) => color.id === id);
 
@@ -100,7 +99,7 @@ export async function getShadesOfColor(color: IColor): Promise<IColorBase[]> {
 
   for (let i = 0; i < 5; i++) {
     // generate a random number between -10 and 10
-    let randomOffset = Math.floor(Math.random() * 21) - 10;
+    let randomOffset = Math.floor(Math.random() * 151) - 75;
     // add offset to each rgb val, keeping in range of 0-255
     if (randomOffset === 0) {
       randomOffset = 1;
@@ -115,16 +114,23 @@ export async function getShadesOfColor(color: IColor): Promise<IColorBase[]> {
       bShade = Math.max(b + randomOffset, rgbMin);
     }
 
-    if (rShade === r && gShade === g && bShade === b) {
-      //the color hasn't changed, run it again 
-      //(ex: white can't get any more white)
+    //get the last 2 chars of the shade: adds leading 0 if needed
+    const rShadeHex = ('0' + rShade.toString(16)).slice(-2);
+    const gShadeHex = ('0' + gShade.toString(16)).slice(-2);
+    const bShadeHex = ('0' + bShade.toString(16)).slice(-2);
+
+    if (
+      rShade === r && gShade === g && bShade === b ||
+      shades.find((color) => color.hex === `#${rShadeHex}${gShadeHex}${bShadeHex}`.toLocaleUpperCase())
+      ) {
+      // No repeating colors
       i--;
       continue;
     }
 
     shades.push({
       name: `Shade of ${color.name}`, 
-      hex: `#${rShade.toString(16)}${gShade.toString(16)}${bShade.toString(16)}`,
+      hex: `#${rShadeHex}${gShadeHex}${bShadeHex}`.toLocaleUpperCase(),
     });
   }
 

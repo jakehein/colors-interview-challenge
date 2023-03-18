@@ -46,8 +46,6 @@ function Menu() {
         </li>
       </ul>
     </div>
-
-
   );
 }
 
