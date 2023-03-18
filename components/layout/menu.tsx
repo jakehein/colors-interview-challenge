@@ -1,32 +1,24 @@
 import Link from "next/link";
 import classes from './menu.module.css';
+import { getRandomColor } from "../../helpers/api-util";
+import Router from "next/router";
 
 function Menu() {
   
-  function onClickHandler() {
+  async function onClickHandler() {
+    const randomColor = await getRandomColor();
 
+    Router.push(`/details/${randomColor.id}`);
   }
-
-  // return (
-  //   <header className={classes.header}>
-  //     <div>
-  //       <Image 
-  //         className={classes.logo} 
-  //         src={Hsvg} 
-  //         alt="Helpful Human logo" 
-  //         width={52} 
-  //         height={52} 
-  //       />
-  //     </div>
-  //     <div >
-  //       <input type="search" placeholder="Search" className={classes.search}/>
-  //     </div>
-  //   </header>
-  // );
 
   return (
     <div className={classes.menu}>
-      <button className={classes.randomColor} onClick={onClickHandler}>Random Color</button>
+      <div className={classes.randomColorContainer}>
+        <button className={classes.randomColor} onClick={onClickHandler}>
+          Random Color
+        </button>
+      </div>
+      
       <ul className={classes.colorPresets}>
         <li>
           <Link href={'/details/65'}>Red</Link>

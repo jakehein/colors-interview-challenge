@@ -7,7 +7,6 @@ function Layout(props) {
   return (
     <div className={classes.layout}>
       <PageHeader />
-      {/**Left-hand menu w/ position: fixed to left */}
       <div className={classes.pageLayout}>
         <Menu />
         <main>{props.children}</main>

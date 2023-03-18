@@ -1,5 +1,33 @@
 .menu {
   background-color: #D6D8D8;
-  width: 15vw;
+  width: 20vw;
   height: 100vw;
+  padding-top: 2em;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+  /* box-sizing: border-box; */
+}
+
+.randomColorContainer {
+  display: flex;
+  flex: 1;
+  /* box-sizing: border-box; */
+}
+
+.randomColor {
+  flex: 1;
+  cursor: pointer;
+}
+
+.colorPresets > li > a {
+  text-decoration: none;
+  color:inherit;
+}
+
+.colorPresets > li {
+  padding-top: 1em;
+}
+
+.colorPresets {
+  /* padding-left: 1em; */
 }

@@ -30,13 +30,15 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  font-size: large;
 }
 
-.center {
-  margin: auto;
-  text-align: center;
-}
-
-.button {
-  font-weight: 400;
+button {
+  font-weight: 600;
+  padding: 0.5em 1em;
+  flex: 1;
+  border-radius: 0.25em;
+  border-width: thin;
+  font-size: large;
+  font-family: 'Source Serif Pro', serif;
 }
