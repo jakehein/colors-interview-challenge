@@ -1,0 +1,9 @@
+.pageList {
+  display: flex;
+  justify-content: center;
+
+}
+
+.pageItem {
+  padding: 1em 0.25em 0 0.25em;
+}

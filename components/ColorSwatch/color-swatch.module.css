@@ -1,8 +1,10 @@
+/** Details */
 .colorSwatchContainer {
   height: 70%;
   width: 100%;
-  border: 2px solid black;
   border-radius: 0.5em;
+  border: 1px solid black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .colorSwatch {
@@ -17,22 +19,48 @@
   font-size: x-large;
 }
 
-.colorSwatchTileContainer {
+/** Shade Tiles */
+.colorSwatchTileShadeContainer {
   height: 70%;
   width: 15%;
-  border: 2px solid black;
+  border: 2px solid whitesmoke;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 0.5em;
   cursor: pointer;
 }
 
-.colorSwatchTile {
+.colorSwatchTileShade {
   width: 100%;
   height: 10vh;
   padding: 0 1em;
 }
 
-.colorInfoTile {
+.colorInfoTileShade {
   display: flex;
-  padding: 0.5em;
-  font-size: large;
+  padding: 0.5em 0.5em;
+  font-size: medium;
+  background-color: #fdfdfd;
+}
+
+/** Detail List Tiles */
+.colorSwatchTileListContainer {
+  height: 100%;
+  width: 100%;
+  border: 2px solid whitesmoke;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.colorSwatchTileList {
+  width: 100%;
+  height: 120px;
+  padding: 0 1em;
+}
+
+.colorInfoTileList {
+  display: flex;
+  padding: 0.5em 0.5em;
+  font-size: medium;
+  background-color: #fdfdfd;
 }

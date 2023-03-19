@@ -14,9 +14,11 @@
 .clearContainer {
   display: flex;
   justify-content: center;
+  
 }
 
 .clear {
   display: flex;
   width: 15em;
+  cursor: pointer;
 }

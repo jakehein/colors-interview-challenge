@@ -1,0 +1,16 @@
+.swatches {
+  padding: 2em 1.5em 0em 2.5em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+}
+
+.ColorSwatchContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.swatchDetailsLink {
+  text-decoration: none;
+  color: inherit;
+}

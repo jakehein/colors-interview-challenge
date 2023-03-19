@@ -10,7 +10,7 @@ html, body {
   font-family: 'Source Serif Pro', serif;
   font-weight: 300;
   color: #000000;
-  background-color: #e4f1f1;
+  background-color: #FFFFFF;
   height: 100%;
 } 
 
@@ -43,6 +43,9 @@ button {
   border-width: thin;
   font-size: large;
   font-family: 'Source Serif Pro', serif;
+  border: 1px solid black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 input {

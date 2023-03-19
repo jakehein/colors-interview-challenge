@@ -1,7 +1,7 @@
 import Router from "next/router";
 import ColorSwatch from "../../components/ColorSwatch";
 import { getAllColors, getColorById, getShadesOfColor } from "../../helpers/api-util";
-import { IColor, IColorBase } from "../../public/common";
+import { IColor, IColorBase, Tile } from "../../public/common";
 import classes from './color-detail-page.module.css'
 import { useEffect, useState } from "react";
 
@@ -24,11 +24,11 @@ function ColorDetailPage(props: { color: IColor, shades: IColorBase[] }) {
   return (
     <div>
       <div className={classes.swatchContainer}>
-        <ColorSwatch isTile={false} currentDetailsHandler={()=>{}} color={currentColorDetails} />
+        <ColorSwatch tile={Tile.Details} color={currentColorDetails} />
       </div>
 
       <div className={classes.swatchShadeContainer}>
-        {props.shades.map((shade) => <ColorSwatch isTile={true} key={shade.hex} currentDetailsHandler={currentDetailsHandler} color={shade} />)}
+        {props.shades.map((shade) => <ColorSwatch tile={Tile.Shade_tile} key={shade.hex} currentDetailsHandler={currentDetailsHandler} color={shade} />)}
       </div>
 
       <div className={classes.clearContainer}>

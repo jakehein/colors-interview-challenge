@@ -1,5 +1,8 @@
 import { useState } from 'react';
-import { GroupedColors } from '../../public/common';
+import { GroupedColors, Tile } from '../../public/common';
+import ColorSwatch from '../ColorSwatch';
+import classes from './color-swatch-list.module.css';
+import Link from 'next/link';
 
 function ColorSwatchList(props: {groupedColors: GroupedColors, activePage: number}) {
   const [groupedColors, setGroupedColors] = useState(props.groupedColors);
@@ -8,16 +11,16 @@ function ColorSwatchList(props: {groupedColors: GroupedColors, activePage: numbe
 
   return (
     <div>
-      <ul style={activePage !== colorGroup.page ? { display: 'none'} : {}}>
+      <div className={classes.swatches} style={activePage !== colorGroup.page ? { display: 'none'} : {}}>
         { 
           groupedColors.colors.map(
             (color) => 
-              <li key={color.id}>
-                {color.name} : {color.hex}
-              </li>
+              <Link key={color.id} className={classes.swatchDetailsLink} href={`/details/${color.id}`}>
+                <ColorSwatch color={color} tile={Tile.Details_list_tile}/>
+              </Link>
           )
         }
-      </ul>
+      </div>
     </div>
   )
 }

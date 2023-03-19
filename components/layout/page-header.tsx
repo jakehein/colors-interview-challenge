@@ -48,7 +48,7 @@ function PageHeader(props) {
           height={52} 
         />
       </div>
-      <div >
+      <div>
         <input type="search" placeholder="Search" ref={searchRef} onKeyDown={onKeyDownHandler} className={classes.search}/>
       </div>
     </header>
