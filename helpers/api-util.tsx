@@ -37,7 +37,6 @@ export async function getGroupedColors(): Promise<GroupedColors[]> {
     if (colorGroup.colors.length === maxPerPage) {
       pageIndex++;
     }
-    
   });
 
   return groupedColors;

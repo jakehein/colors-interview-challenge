@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 
 function ColorDetailPage(props: { color: IColor, shades: IColorBase[] }) {
   const color = props.color;
+  const shades = props.shades;
   const [currentColorDetails, setCurrentColorDetails] = useState(color as IColorBase)
 
   useEffect(() => {
@@ -28,7 +29,7 @@ function ColorDetailPage(props: { color: IColor, shades: IColorBase[] }) {
       </div>
 
       <div className={classes.swatchShadeContainer}>
-        {props.shades.map((shade) => <ColorSwatch tile={Tile.Shade_tile} key={shade.hex} currentDetailsHandler={currentDetailsHandler} color={shade} />)}
+        {shades.map((shade) => <ColorSwatch tile={Tile.Shade_tile} key={shade.hex} currentDetailsHandler={currentDetailsHandler} color={shade} />)}
       </div>
 
       <div className={classes.clearContainer}>

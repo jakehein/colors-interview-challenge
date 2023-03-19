@@ -6,7 +6,7 @@ import Router from "next/router";
 import { IColor } from "../../public/common";
 import { getColorByHexCode, getColorById, getColorByName } from "../../helpers/api-util";
 
-function PageHeader(props) {
+function PageHeader() {
   const searchRef = useRef<HTMLInputElement>();
 
   async function onKeyDownHandler(event: KeyboardEvent) {

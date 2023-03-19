@@ -5,6 +5,7 @@ import { IColor, GroupedColors } from '../public/common';
 import { useAppContext } from '../context/state';
 import ColorSwatchPage from '../components/ColorSwatchList/color-swatch-page';
 import classes from './homepage.module.css';
+import Head from 'next/head';
 
 function HomePage(props: { colors: IColor[]; groupedColors: GroupedColors[] }) {
   const colors = props.colors;
@@ -20,6 +21,10 @@ function HomePage(props: { colors: IColor[]; groupedColors: GroupedColors[] }) {
 
   return (
     <Fragment>
+      <Head>
+        <title>H-H Colors Interview Challenge</title>
+        <meta name='description' content='This is a website coding challenge. I decided to go with Nextjs, as I wanted to challenge myself with new tools.'  />
+      </Head>
       <ul>
         {
           //List of tiles
