@@ -120,9 +120,12 @@ export async function getShadesOfColor(color: IColor): Promise<IColorBase[]> {
 
     if (
       rShade === r && gShade === g && bShade === b ||
-      shades.find((color) => color.hex === `#${rShadeHex}${gShadeHex}${bShadeHex}`.toLocaleUpperCase())
+      shades.find((color) => color.hex === `#${rShadeHex}${gShadeHex}${bShadeHex}`.toLocaleUpperCase()) ||
+      rShade === rgbMin && gShade === rgbMin && bShade === rgbMin ||
+      rShade === rgbMax && gShade === rgbMax && bShade === rgbMax
       ) {
-      // No repeating colors
+      // No repeating colors,
+      // Don't allow Black or White as a 'shade'
       i--;
       continue;
     }
